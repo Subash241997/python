@@ -118,7 +118,7 @@
         <div class="row">
 
             <div class="col-md-6 p-1 bg-image hover-overlay">
-                <div class="rounded-6 position-relative" style="background-image: url('/Blog-Template/images/1.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
+                <div class="rounded-6 position-relative" style="background-image: url('images/1.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
                   <div class="mask rounded-6 ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                     <span><button type="button" class="btn btn-warning btn-sm">Design</button></span>
@@ -132,7 +132,7 @@
             <div class="col-md-6">
 
               <div class="py-1 bg-image hover-overlay">
-                <div class="rounded-6 position-relative" style="background-image: url('/Blog-Template/images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
+                <div class="rounded-6 position-relative" style="background-image: url('images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
                   <div class="mask rounded-6 ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                     <span><button type="button" class="btn btn-danger btn-sm">Music</button></span>
@@ -145,7 +145,7 @@
               <div class="row">
 
                 <div class="col-md-6 py-1 bg-image hover-overlay">
-                  <div class="rounded-6 position-relative" style="background-image: url('/Blog-Template/images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
+                  <div class="rounded-6 position-relative" style="background-image: url('images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
                     <div class="mask rounded-6 ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                     <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                       <span><button type="button" class="btn btn-warning btn-sm">Design</button></span>
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="col-md-6 py-1 bg-image hover-overlay">
-                  <div class="rounded-6 position-relative" style="background-image: url('/Blog-Template/images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
+                  <div class="rounded-6 position-relative" style="background-image: url('images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25vh;">
                     <div class="mask rounded-6 ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                     <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                       <span><button type="button" class="btn btn-success btn-sm">Nature</button></span>
@@ -175,7 +175,7 @@
           <div class="row">
 
                   <div class="col-lg-3 my-1 bg-image hover-overlay">
-                    <div class="position-relative" style="background-image: url('/Blog-Template/images/1.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
+                    <div class="position-relative" style="background-image: url('images/1.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
                       <div class="mask ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                       <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                         <span><button type="button" class="btn btn-warning btn-sm">Design</button></span>
@@ -187,7 +187,7 @@
                 </div>
 
                   <div class="col-lg-3 my-1 bg-image hover-overlay">
-                    <div class="position-relative" style="background-image: url('/Blog-Template/images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
+                    <div class="position-relative" style="background-image: url('images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
                       <div class="mask ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                       <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                         <span><button type="button" class="btn btn-danger btn-sm">Music</button></span>
@@ -199,7 +199,7 @@
                 </div>
 
                <div class="col-lg-3 my-1 bg-image hover-overlay">
-                 <div class="position-relative" style="background-image: url('/Blog-Template/images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
+                 <div class="position-relative" style="background-image: url('images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
                    <div class="mask ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                    <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                      <span><button type="button" class="btn btn-warning btn-sm">Design</button></span>
@@ -211,7 +211,7 @@
               </div>
 
              <div class="col-lg-3 my-1 bg-image hover-overlay">
-                <div class="position-relative" style="background-image: url('/Blog-Template/images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
+                <div class="position-relative" style="background-image: url('images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;">
                  <div class="mask ripple" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                  <div class="position-absolute text-light bottom-0 text-wrap d-flex flex-column m-3" >
                    <span><button type="button" class="btn btn-success btn-sm">Nature</button></span>
@@ -252,7 +252,7 @@
               <div class="mb-3 bg-transparent shadow-0">
                 <div class="row g-0">
                   <div class="col-lg-5 bg-image hover-overlay ripple">
-                    <div class="rounded-6" style="background-image: url('/Blog-Template/images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
+                    <div class="rounded-6" style="background-image: url('images/4.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
                     <div class="mask rounded-6" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   </div>
                   <div class="col-lg-7 d-flex align-items-center">
@@ -276,7 +276,7 @@
               <div class="card mb-3 bg-transparent shadow-0">
                 <div class="row g-0">
                   <div class="col-lg-5 bg-image hover-overlay ripple">
-                    <div class="rounded-6" style="background-image: url('/Blog-Template/images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
+                    <div class="rounded-6" style="background-image: url('images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
                     <div class="mask rounded-6" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   </div>
                   <div class="col-lg-7 d-flex align-items-center">
@@ -300,7 +300,7 @@
               <div class="card mb-3 bg-transparent shadow-0">
                 <div class="row g-0">
                   <div class="col-lg-5 bg-image hover-overlay ripple">
-                    <div class="rounded-6" style="background-image: url('/Blog-Template/images/6.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
+                    <div class="rounded-6" style="background-image: url('images/6.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
                     <div class="mask rounded-6" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   </div>
                   <div class="col-lg-7 d-flex align-items-center">
@@ -324,7 +324,7 @@
               <div class="card mb-3 bg-transparent shadow-0">
                 <div class="row g-0">
                   <div class="col-lg-5 bg-image hover-overlay ripple">
-                    <div class="rounded-6" style="background-image: url('/Blog-Template/images/7.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
+                    <div class="rounded-6" style="background-image: url('images/7.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
                     <div class="mask rounded-6" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   </div>
                   <div class="col-lg-7 d-flex align-items-center">
@@ -348,7 +348,7 @@
               <div class="card mb-3 bg-transparent shadow-0">
                 <div class="row g-0">
                   <div class="col-lg-5 bg-image hover-overlay ripple">
-                    <div class="rounded-6" style="background-image: url('/Blog-Template/images/8.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
+                    <div class="rounded-6" style="background-image: url('images/8.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 30vh;"></div>
                     <div class="mask rounded-6" style="background-color: rgba(18, 17, 17, 0.2);"></div>
                   </div>
                   <div class="col-lg-7 d-flex align-items-center">
@@ -466,7 +466,7 @@
                 <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                 <div class="row">
                     <div class="col-lg-3 col-3">
-                      <div class="rounded" style="background-image: url('/Blog-Template/images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                      <div class="rounded" style="background-image: url('images/2.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                     </div>
                     <div class="col-lg-9 col-9 d-flex justify-content-center flex-column">
                         <h6 class="fw-light c-title">My Favourite Fruit.</h6>
@@ -478,7 +478,7 @@
                 <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                   <div class="row">
                       <div class="col-lg-3 col-3">
-                        <div class="rounded" style="background-image: url('/Blog-Template/images/6.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                        <div class="rounded" style="background-image: url('images/6.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                       </div>
                       <div class="col-lg-9 col-9 d-flex justify-content-center flex-column">
                           <h6 class="fw-light c-title">This Is My Favourite Place That I mostly Visit</h6>
@@ -490,7 +490,7 @@
                   <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                     <div class="row">
                         <div class="col-lg-3 col-3">
-                          <div class="rounded" style="background-image: url('/Blog-Template/images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                          <div class="rounded" style="background-image: url('images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                         </div>
                         <div class="col-lg-9 col-9 d-flex justify-content-center flex-column">
                             <h6 class="fw-light c-title">My Favourite Fruit.</h6>
@@ -506,7 +506,7 @@
                 <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                 <div class="row">
                     <div class="col-lg-3 col-3">
-                      <div style="background-image: url('/Blog-Template/images/7.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                      <div style="background-image: url('images/7.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                     </div>
                     <div class="col-lg-9 col-md-6 col-9 d-flex justify-content-center flex-column">
                         <h6 class="fw-light c-title">My Favourite Fruit.</h6>
@@ -518,7 +518,7 @@
                 <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                   <div class="row">
                       <div class="col-lg-3 col-3">
-                        <div style="background-image: url('/Blog-Template/images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                        <div style="background-image: url('images/5.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                       </div>
                       <div class="col-lg-9 col-9 d-flex justify-content-center flex-column">
                           <h6 class="fw-light c-title">This Is My Favourite Place That I mostly Visit</h6>
@@ -530,7 +530,7 @@
                   <div class="mb-1 bg-transparent shadow-0" style="cursor: pointer;">
                     <div class="row">
                         <div class="col-lg-3 col-3">
-                          <div style="background-image: url('/Blog-Template/images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
+                          <div style="background-image: url('images/3.jpeg'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 8vh;"></div>
                         </div>
                         <div class="col-lg-9 col-9 d-flex justify-content-center flex-column">
                             <h6 class="fw-light c-title">My Favourite Fruit.</h6>
