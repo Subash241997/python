@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "header.html" %}
+    <style>
+        .hidden {
+            display: none;
+        }
+        .error-field {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+        <div class="w-50">
+            <form id="signup-form">
+                <h1 class="text-black text-center">Signup</h1>
+                <div class="py-4 px-3 mx-auto">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="first-name" class="form-control" />
+                                <label class="form-label" for="first-name">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="last-name" class="form-control" />
+                                <label class="form-label" for="last-name">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="email" id="email" class="form-control" />
+                        <label class="form-label" for="email">Email address</label>
+                    </div>
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="password" id="password" class="form-control" />
+                        <label class="form-label" for="password">Password</label>
+                    </div>
+                    
+                    <div id="error-message" class="text-danger"></div>
+
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                    {{ message }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                        <label class="form-check-label" for="form2Example33">
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
+
+                    <button id="signup-button" type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+                    <div class="text-center">
+                        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+                        <p>or sign up with:</p>
+                        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button data-mdb-ripple-init type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MDB -->
+    <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js">
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#signup-button').on('click', function() {
+                const firstName = $('#first-name').val().trim();
+                const lastName = $('#last-name').val().trim();
+                const email = $('#email').val().trim();
+                const password = $('#password').val().trim();
+                const name = firstName + ' ' + lastName;
+
+                // Validation
+                const nameRegex = /^[a-zA-Z\s]+$/;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+                let errorMessage = '';
+                let focusField = '';
+
+                $('#error-message').addClass('hidden'); // Hide error message initially
+
+                if (!firstName) {
+                    errorMessage += 'First name is required.<br>';
+                    focusField = '#first-name';
+                } else if (!lastName) {
+                    errorMessage += 'Last name is required.<br>';
+                    focusField = '#last-name';
+                } else if (!email) {
+                    errorMessage += 'Email is required.<br>';
+                    focusField = '#email';
+                } else if (!password) {
+                    errorMessage += 'Password is required.<br>';
+                    focusField = '#password';
+                } else if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+                    errorMessage += 'Name must only contain letters and spaces.<br>';
+                    focusField = !nameRegex.test(firstName) ? '#first-name' : '#last-name';
+                } else if (!emailRegex.test(email)) {
+                    errorMessage += 'Please enter a valid email address.<br>';
+                    focusField = '#email';
+                } else if (!passwordRegex.test(password)) {
+                    errorMessage += 'Password must be at least 8 characters long, include one uppercase letter, one number, and one special character.<br>';
+                    focusField = '#password';
+                }
+
+                if (errorMessage) {
+                    $('#error-message').html(errorMessage).removeClass('hidden');
+                    if (focusField) {
+                        $(focusField).addClass('error-field').focus();
+                    }
+                    return;
+                }
+
+                // Send AJAX request
+                $.ajax({
+                    url: 'http://127.0.0.1:8000/api/signup/', // Replace with your Django signup URL
+                    type: 'POST',
+                    data: JSON.stringify({
+                        'first_name': firstName,
+                        'last_name': lastName,
+                        'email': email,
+                        'password': password
+                    }),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        $('#error-message').text(response);
+                        //window.location.href = '/success/';  // Replace with your desired redirect URL
+                    },
+                    error: function(xhr) {
+                        $('#error-message').text(xhr.responseJSON);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

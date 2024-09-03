@@ -1,0 +1,155 @@
+<html lang="en">
+  {%load static%}
+{% include "header.html" %}
+<body>
+  {% comment %} <img src="{% static "favicon_io/android-chrome-192x192.png" %}"> {% endcomment %}
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    <div class="w-50">
+      <h1 class="text-black text-center">Login</h1>
+      <div class="py-4 px-3 mx-auto">
+          <!-- Email input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="email" class="form-control" />
+            <label class="form-label" for="email">Email address</label>
+          </div>
+        
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="password" class="form-control" />
+            <label class="form-label" for="password">Password</label>
+          </div>
+          <!--error message-->
+          <div id="error-message" class="text-danger"></div>
+        
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+                <label class="form-check-label" for="form2Example34"> Remember me </label>
+              </div>
+            </div>
+        
+            <div class="col">
+              <!-- Simple link -->
+              <a href="{% url "forgetpassword" %}">Forgot password?</a>
+            </div>
+          </div>
+        
+          <!-- Submit button -->
+          <div class="d-flex justify-content-center">
+            <button type="button" id="signin-button" class="btn btn-primary mb-4 shadow-0">Sign in</button>
+          </div>
+        
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>Not a member? <a href="{% url 'signup' %}">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-secondary btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+        
+            <button type="button" class="btn btn-secondary btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+        
+            <button type="button" class="btn btn-secondary btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+            </button>
+        
+            <button type="button" class="btn btn-secondary btn-floating mx-1">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+      </div>
+    </div>
+</div>
+</body>
+{% include "footer.html" %}
+<script>
+  $(document).ready(function() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        window.location.href = '/login/'; // Redirect to login if no token is found
+        return;
+    }else{
+      $.ajax({
+        url: 'http://127.0.0.1:8000/api/user-profile/',
+        type: 'GET',
+        headers: {
+            'Authorization': `Token ${token}`
+        },
+        success: function(response) {
+          window.location.href = '/home/';
+        },
+    });
+    }
+});
+  $(document).ready(function() {
+    $('#signin-button').on('click', function() {
+
+        const email = $('#email').val().trim();
+        const password = $('#password').val().trim();
+        console.log(email+", "+password);
+
+        // Validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // At least 8 chars, 1 uppercase, 1 number, 1 special char
+        
+        let errorMessage = '';
+        let focusField = '';
+
+        // Remove previous error styling
+        $('#error-message').addClass('hidden'); // Hide error message initially
+
+        // Check if fields are empty
+        if (!email) {
+            errorMessage += 'Email is required.<br>';
+            focusField = '#email';
+        } else if (!emailRegex.test(email)) {
+          errorMessage += 'Please enter a valid email address.<br>';
+          focusField = '#email';
+        } else if (!password) {
+            errorMessage += 'Password is required.<br>';
+            focusField = '#password';
+        } else if (!passwordRegex.test(password)) {
+            errorMessage += 'Password must be at least 8 characters long, include one uppercase letter, one number, and one special character.<br>';
+            focusField = '#password';
+        }
+
+        if (errorMessage) {
+            $('#error-message').html(errorMessage).removeClass('hidden');
+            if (focusField) {
+                $(focusField).addClass('error-field').focus(); // Set focus to the field with error
+            }
+            return;
+        }
+
+        // Send AJAX request
+        $.ajax({
+            url: 'http://127.0.0.1:8000/api/login/', // Add the URL of your Django view
+            type: 'POST',
+            data: JSON.stringify({
+                'email': email,
+                'password': password
+            }),
+            contentType: 'application/json',
+            success: function(response) {
+              console.log(response);
+              localStorage.setItem('token', response.token);
+              
+                if(response.success){
+                  window.location.href = '../home/';
+                }
+                // Redirect or clear form here
+            },
+            error: function(xhr) {
+                $('#error-message').text(xhr.responseJSON);
+            }
+        });
+    });
+});
+</script>
+</html>
