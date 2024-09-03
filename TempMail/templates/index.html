@@ -1,0 +1,19 @@
+<!-- emails/templates/emails/inbox.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox</title>
+</head>
+<body>
+    <h1>Inbox for {{ email_address }}</h1>
+    <ul>
+        {% for email in emails %}
+            <li>
+                <strong>Subject:</strong> {{ email.subject }}<br>
+                <strong>Body:</strong> {{ email.body }}<br>
+                <strong>Received at:</strong> {{ email.received_at }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
